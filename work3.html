@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="timing()">计时开始</button>
+    <div id="demo">
+    </div>
+<script>
+    var click = 1;
+    var i = 0;
+    var timer = null;
+    function timing() {
+        var oBody=document.getElementById("demo");
+        click=click%2;
+        if(click==1)timer=setInterval(updateNum,1000);
+        else clearInterval(timer);
+        click++;
+        function updateNum() {
+            var j = i++;
+            oBody.innerHTML = "Time passed: " + "<span>" + j + "</span>" + " s";
+        }
+        }
+
+    </script>
+</body>
+</html>
